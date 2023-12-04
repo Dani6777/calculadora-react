@@ -6,20 +6,24 @@ export default function operate(numeroUno, numeroDos, operador) {
         numeroDos || (operador === '/' || operador === 'x' ? '1' : '0')
     );
 
+    // Verifica si el operador es válido
+    if (!['+', '-', 'x', '/'].includes(operador)) {
+        throw new Error('Operador no válido');
+    }
+
     switch (operador) {
         case '+':
             return uno.plus(dos).toString();
         case '-':
             return uno.minus(dos).toString();
         case 'x':
-            return uno.times(dos).toString();
+            return uno.div(dos).toString();
         case '/':
             if (dos.eq(0)) {
-                alert('¡División por cero!');
-                return 'Error';
+                throw new Error('¡División por cero!');
             }
             return uno.div(dos).toString();
         default:
-            return 'Operador no válido';
+            throw new Error('Operador no válido');
     }
 }

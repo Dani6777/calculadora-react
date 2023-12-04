@@ -1,9 +1,11 @@
-export default function Boton({clickHandle,name}){
+import React from 'react';
 
-    const handleClick = ()=> clickHandle(name)
-    return(
-        <div>
-            <button onClick={handleClick}>{name}</button>
-        </div>
-    )
+export default function Boton({ clickHandle, name }) {
+    const handleClick = () => clickHandle(name);
+
+    return (
+        <button onClick={handleClick}>
+            {name}
+        </button>
+    );
 }
