@@ -1,11 +1,9 @@
 import React from 'react';
 
 export default function Boton({ clickHandle, name }) {
-    const handleClick = () => clickHandle(name);
+    const handleClick = () => clickHandle(name)
 
     return (
-        <button onClick={handleClick}>
-            {name}
-        </button>
+        <button onClick={handleClick}>{name}</button>
     );
 }
